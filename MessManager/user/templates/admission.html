@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         a {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #d7d2c9; padding: 20px;">
+    <a href="{%url 'Home'%}">Home</a>
+    <form method="post" enctype="multipart/form-data" style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px; max-width: 400px; margin: auto;">
+        {% csrf_token %}
+        <div style="margin-bottom: 10px;">
+            <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+            <input type="text" id="name" name="name" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="dep" style="display: block; margin-bottom: 5px;">Department:</label>
+            <input type="text" id="dep" name="dep" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="phone" style="display: block; margin-bottom: 5px;">Phone:</label>
+            <input type="text" id="phone" name="phone" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="year" style="display: block; margin-bottom: 5px;">Year:</label>
+            <input type="text" id="year" name="year" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+        </div>
+        <button type="submit" style="background-color: #007bff; color: #ffffff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+            Add
+        </button>
+    </form>
+
+</body>
+</html>

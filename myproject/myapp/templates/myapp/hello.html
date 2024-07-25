@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+</head>
+<body>
+    {%for movieobj in movies%}
+    <h1>MOVIE UPDATES</h1>
+    <h2>Title:{{movieobj.title}}</h2>
+    <br>
+    <p1>Year:{{movieobj.year}}</p1>
+    <br>
+    <p1>Director:{{movieobj.director}}</p1>
+    <br>
+    {%if movieobj.success%}
+   <p1>movie was a success at that time</p1> 
+   {%else%}
+   <p1>movie was a failer at that time</p1> 
+   {%endif%}
+   {%endfor%}
+</body>
+</html>

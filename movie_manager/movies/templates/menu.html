@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px;">
+
+    <ul style="list-style-type: none; padding: 0; background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 5px; width: 200px;">
+        <li style="border-bottom: 1px solid #dee2e6;">
+            <a href="{% url 'Home' %}" style="display: block; padding: 10px; text-decoration: none; color: #007bff;">Home</a>
+        </li>
+        <li style="border-bottom: 1px solid #dee2e6;">
+            <a href="{% url 'create' %}" style="display: block; padding: 10px; text-decoration: none; color: #007bff;">Create</a>
+        </li>
+        <li style="border-bottom: 1px solid #dee2e6;">
+            <a href="{% url 'edit' %}" style="display: block; padding: 10px; text-decoration: none; color: #007bff;">Edit</a>
+        </li>
+        <li>
+            <a href="{% url 'list' %}" style="display: block; padding: 10px; text-decoration: none; color: #007bff;">List</a>
+        </li>
+    </ul>
+
+</body>
+</html>

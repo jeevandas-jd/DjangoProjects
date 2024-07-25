@@ -1,0 +1,22 @@
+{% extends 'blank.html' %}
+{% block content %}
+<h1 style="font-size: 24px; color: #333333;">Create</h1>
+<form method="post" enctype="multipart/form-data" style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px; max-width: 400px; margin: auto;">
+    {% csrf_token %}
+    <div style="margin-bottom: 10px;">
+        <label for="title" style="display: block; margin-bottom: 5px;">Title:</label>
+        <input type="text" id="title" name="title" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="director" style="display: block; margin-bottom: 5px;">Director:</label>
+        <input type="text" id="director" name="director" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="year" style="display: block; margin-bottom: 5px;">Year:</label>
+        <input type="text" id="year" name="year" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+    </div>
+    <button type="submit" style="background-color: #007bff; color: #ffffff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+        Create
+    </button>
+</form>
+{% endblock content %}

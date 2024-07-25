@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d7d2c9;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            max-width: 400px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .id-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: left;
+            width: 100%;
+        }
+        .id-card p {
+            color: #333333;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="{%url 'Home'%}">Home</a>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="IDnumber">ID Number:</label>
+        <input type="text" id="IDnumber" name="IDnumber">
+        <button type="submit">Check</button>
+    </form>
+    
+    <div class="id-card">
+        <h2>Details</h2>
+        <p>Name: {{ info.name }}</p>
+        <p>Department: {{ info.dep }}</p>
+        <p>Phone: {{ info.phone }}</p>
+        <p>Year of Study: {{ info.year }}</p>
+    </div>
+</body>
+</html>

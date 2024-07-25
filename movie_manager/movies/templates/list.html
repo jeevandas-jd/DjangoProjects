@@ -1,0 +1,32 @@
+{%extends 'blank.html'%}
+{%load static%}
+{%block content%}
+<h1>List</h1>
+<h1>MOVIE UPDATES</h1>
+<table style="width: 100%; border-collapse: collapse; background-color: #e26565;">
+    <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Title</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Year</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Director</th>
+    </tr>
+    {% for movieobj in movies %}
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.title }}</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.year }}</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.director }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+{%for movieobj in movies%}
+<br>
+<!--<img src="{%static 'images/'%}{{movieobj.image}}"><br>-->
+<h2>Title:{{movieobj.title}}</h2>
+<br>
+<p1>Year:{{movieobj.year}}</p1>
+<br>
+<p1>Director:{{movieobj.director}}</p1>
+<br>
+
+{%endfor%}
+{%endblock content%}

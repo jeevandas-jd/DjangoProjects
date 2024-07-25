@@ -1,0 +1,24 @@
+<!-- edit.html -->
+{% extends 'list.html' %}
+{% block content %}
+<h1>Edit Movies</h1>
+<table style="width: 100%; border-collapse: collapse; background-color: #ffffff;">
+    <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Title</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Year</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Director</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;">Actions</th>
+    </tr>
+    {% for movieobj in movies %}
+    <tr>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.title }}</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.year }}</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">{{ movieobj.director }}</td>
+        <td style="border: 1px solid #dddddd; padding: 8px;">
+            <a href="{%url 'change' movieobj.id%}" style="color: #007bff; text-decoration: none;">Edit</a> |
+            <a href="{%url 'delete' movieobj.id%}" style="color: #ff0404; text-decoration: none;">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

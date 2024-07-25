@@ -1,0 +1,23 @@
+{%extends 'blank.html'%}
+
+{%block content%}
+
+<form method="post" enctype="multipart/form-data" style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px; max-width: 400px; margin: auto;">
+    {% csrf_token %}
+    <div style="margin-bottom: 10px;">
+        <label for="title" style="display: block; margin-bottom: 5px;">Title:</label>
+        <input type="text" id="title" name="title" value="{{instace_edit.title}}" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; placeholder="{frm.title%}""/>
+    </div>
+    <div style="margin-bottom: 12px">
+        <label for="director" style="display: block; margin-bottom: 5px;">Director:</label>
+        <input type="text" id="director" name="director" value="{{instace_edit.director}}" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="year" style="display: block; margin-bottom: 5px;">Year:</label>
+        <input type="text" id="year" name="year" value="{{instace_edit.year}}"style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;"/>
+    </div>
+    <button type="submit" style="background-color: #007bff; color: #ffffff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+        make changes
+    </button>
+</form>
+{%endblock%}
